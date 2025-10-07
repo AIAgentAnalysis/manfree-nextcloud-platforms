@@ -1,0 +1,16 @@
+NEXTCLOUD_VERSION=latest
+PLATFORM_VERSION=1.0
+BUILD_DATE=2025-01-13
+DOCKER_TAG=manfree-nextcloud:latest
+
+# Version History
+# v1.0 - Initial release with Nextcloud latest
+# - MariaDB 10.6 database
+# - Redis caching
+# - Cloudflare tunnel support
+# - Automated backup/restore
+# - 10GB file upload support
+
+# Data Compatibility
+# Backup/restore compatible across same major versions
+# Always backup before upgrading

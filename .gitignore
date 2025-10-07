@@ -1,0 +1,39 @@
+# Environment files
+.env
+
+# Backup files (use Git LFS if needed)
+backup/*.tar.gz
+
+# Docker volumes
+volumes/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Customization working files
+customizations/apps/.working/
+customizations/themes/.working/
+customizations/config/.working/
+
+# Cloudflare credentials
+global-access/permanent/.cloudflared/
+*.pem
+*.cert
+
+# Tunnel tokens
+tunnel-token.txt
