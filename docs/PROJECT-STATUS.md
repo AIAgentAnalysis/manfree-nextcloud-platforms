@@ -68,7 +68,7 @@
 - **Database**: MariaDB 10.6
 - **Cache**: Redis Alpine
 - **Network**: Bridge network
-- **Port**: 8090
+- **Port**: 8070
 
 ### Features
 - ✅ 10GB file upload limit

@@ -4,6 +4,31 @@
 
 ---
 
+## 🚨 CRITICAL: Cannot Stop Containers (Permission Denied)
+
+**Symptoms:**
+```bash
+$ docker-compose down
+Error response from daemon: cannot stop container: permission denied
+```
+
+**Root Cause:**
+Docker daemon state corruption from stuck container processes.
+
+**Solution:**
+```bash
+# Run the fix script
+./fix-docker.sh
+
+# Then rebuild and start
+docker-compose build --no-cache
+docker-compose up -d
+```
+
+**Details:** See [DOCKER-SHUTDOWN-ISSUE.md](../DOCKER-SHUTDOWN-ISSUE.md) for complete analysis.
+
+---
+
 ## 🚨 Platform Won't Start
 
 **Check Docker:**
@@ -38,7 +63,7 @@ docker exec manfree_nextcloud cat /var/www/html/config/config.php | grep trusted
 
 **Check Firewall:**
 ```bash
-sudo ufw allow 8090
+sudo ufw allow 8070
 ```
 
 **Update Trusted Domains:**

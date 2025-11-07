@@ -110,8 +110,8 @@ docker-compose ps
 IP=$(hostname -I | awk '{print $1}')
 
 # Access URLs:
-# Local: http://localhost:8090
-# LAN: http://$IP:8090
+# Local: http://localhost:8070
+# LAN: http://$IP:8070
 
 # Login with credentials from .env file
 ```
@@ -208,7 +208,7 @@ nano .env
 
 **Default configuration works:**
 ```bash
-# Access: http://localhost:8090
+# Access: http://localhost:8070
 # No additional configuration needed
 ```
 
@@ -225,16 +225,16 @@ hostname -I
 nano .env
 
 # Add your IP to trusted domains
-NEXTCLOUD_TRUSTED_DOMAINS=localhost 192.168.1.100 files.manfreetechnologies.com
+NEXTCLOUD_TRUSTED_DOMAINS=localhost 192.168.1.100 cloud.manfreetechnologies.com
 ```
 
 **3. Configure Firewall:**
 ```bash
 # Ubuntu/Debian
-sudo ufw allow 8090
+sudo ufw allow 8070
 
 # CentOS/RHEL
-sudo firewall-cmd --add-port=8090/tcp --permanent
+sudo firewall-cmd --add-port=8070/tcp --permanent
 sudo firewall-cmd --reload
 ```
 
@@ -247,7 +247,7 @@ sudo firewall-cmd --reload
 **5. Test Access:**
 ```bash
 # From another device on same network
-# Open browser: http://192.168.1.100:8090
+# Open browser: http://192.168.1.100:8070
 ```
 
 ### Global Access (Internet)
@@ -262,7 +262,7 @@ sudo firewall-cmd --reload
 
 ### First Login
 
-1. Open browser: `http://localhost:8090`
+1. Open browser: `http://localhost:8070`
 2. Login with admin credentials from `.env`
 3. Complete setup wizard
 4. Install recommended apps
@@ -405,8 +405,8 @@ groups
 ### Port Already in Use
 
 ```bash
-# Check what's using port 8090
-sudo netstat -tlnp | grep 8090
+# Check what's using port 8070
+sudo netstat -tlnp | grep 8070
 
 # Kill process or change port in docker-compose.yml
 ```
@@ -427,7 +427,7 @@ docker-compose up -d --build
 ```bash
 # Check firewall
 sudo ufw status
-sudo ufw allow 8090
+sudo ufw allow 8070
 
 # Check trusted domains
 docker exec manfree_nextcloud cat /var/www/html/config/config.php | grep trusted_domains

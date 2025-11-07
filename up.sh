@@ -36,7 +36,7 @@ fi
 
 # Start containers (build only if needed)
 echo "🚀 Starting containers..."
-if ! docker-compose up -d; then
+if ! docker-compose up -d --build; then
     echo "❌ Failed to start containers"
     docker-compose logs --tail=20
     exit 1
@@ -53,8 +53,14 @@ echo ""
 echo "✅ Nextcloud Platform started successfully!"
 echo ""
 echo "🌐 Access Points:"
-echo "   Local:    http://localhost:8090"
-echo "   LAN:      http://$IP:8090"
+echo "   Local:    http://localhost:8070"
+echo "   LAN:      http://$IP:8070"
+if systemctl is-active cloudflared &>/dev/null; then
+    echo "   Global:   https://cloud.manfreetechnologies.com"
+    echo "📊 Tunnel Status: Active and running"
+else
+    echo "⚠️  Global access not available - tunnel service not running"
+fi
 echo ""
 echo "👤 Admin Credentials (from .env):"
 echo "   Username: admin"

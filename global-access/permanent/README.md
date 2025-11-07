@@ -6,7 +6,7 @@
 
 ## 🎯 What You Get
 
-- **Domain**: files.manfreetechnologies.com
+- **Domain**: cloud.manfreetechnologies.com
 - **HTTPS**: Automatic SSL certificates
 - **Always On**: Auto-start on system boot
 - **Free**: Cloudflare free tier
@@ -67,7 +67,7 @@ tunnel: manfree-nextcloud
 credentials-file: /home/USER/.cloudflared/TUNNEL-ID.json
 
 ingress:
-  - hostname: files.manfreetechnologies.com
+  - hostname: cloud.manfreetechnologies.com
     service: http://localhost:8090
   - service: http_status:404
 ```
@@ -75,7 +75,7 @@ ingress:
 ### 5. Route DNS
 
 ```bash
-cloudflared tunnel route dns manfree-nextcloud files.manfreetechnologies.com
+cloudflared tunnel route dns manfree-nextcloud cloud.manfreetechnologies.com
 ```
 
 ### 6. Setup Auto-Start
@@ -95,7 +95,7 @@ sudo systemctl start cloudflared
 sudo systemctl status cloudflared
 
 # Test access
-curl https://files.manfreetechnologies.com
+curl https://cloud.manfreetechnologies.com
 ```
 
 ---

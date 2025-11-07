@@ -22,7 +22,11 @@ All documentation is located in the [`docs/`](docs/) folder:
 # Stop platform  
 ./down.sh
 
-# Access: http://localhost:8090
+# Health check
+./health-check.sh
+
+# Access: http://localhost:8070
+# Global: https://cloud.manfreetechnologies.com
 ```
 
 **Built for Manfree Technologies Institute** ☁️

@@ -29,7 +29,7 @@ services:
     container_name: manfree_nextcloud
     restart: always
     ports:
-      - "8090:80"
+      - "8070:80"
     depends_on:
       - mariadb
       - redis

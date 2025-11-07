@@ -4,7 +4,7 @@ set -e
 # Error handling
 trap 'echo "❌ Backup failed at line $LINENO"; exit 1' ERR
 
-# Variables
+# Variables for maintainability
 PROJECT_NAME="manfree-nextcloud-platforms"
 VOLUME_PREFIX="${PROJECT_NAME}_"
 
@@ -57,8 +57,8 @@ for file in "${BACKUP_DIR}/${BACKUP_NAME}"*.tar.gz; do
         echo "  $(basename "$file"): ${size_mb}MB"
         
         if [ "$size_mb" -gt "$MAX_SIZE_MB" ]; then
-            echo "  ⚠️  WARNING: File exceeds ${MAX_SIZE_MB}MB"
-            echo "     Consider using Git LFS: git lfs track '*.tar.gz'"
+            echo "⚠️  WARNING: $(basename "$file") (${size_mb}MB) exceeds ${MAX_SIZE_MB}MB"
+            echo "   Consider using Git LFS: git lfs install && git lfs track '*.tar.gz'"
         fi
     fi
 done

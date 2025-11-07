@@ -23,8 +23,8 @@ chmod +x *.sh
 ## 🌐 Access
 
 **Open browser:**
-- Local: http://localhost:8090
-- LAN: http://YOUR-IP:8090
+- Local: http://localhost:8070
+- LAN: http://YOUR-IP:8070
 
 **Login:**
 - Username: `admin`

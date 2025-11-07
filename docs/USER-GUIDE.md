@@ -9,9 +9,9 @@
 ### Accessing Nextcloud
 
 **Web Browser:**
-- Local: http://localhost:8090
-- LAN: http://YOUR-IP:8090
-- Global: https://files.manfreetechnologies.com
+- Local: http://localhost:8070
+- LAN: http://YOUR-IP:8070
+- Global: https://cloud.manfreetechnologies.com
 
 **Login:**
 1. Enter username

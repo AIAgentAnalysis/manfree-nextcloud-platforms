@@ -18,6 +18,8 @@ Complete documentation for the Manfree Technologies Nextcloud Platform - a Docke
 
 ### 📊 Project Information
 - **[Project Status](PROJECT-STATUS.md)** - Current development status
+- **[Cloudflare Tunnel](CLOUDFLARE-TUNNEL.md)** - Global access setup
+- **[Maintenance Guide](MAINTENANCE.md)** - System maintenance
 
 ---
 
@@ -66,7 +68,7 @@ Complete documentation for the Manfree Technologies Nextcloud Platform - a Docke
 # Manual restore
 ./auto-restore.sh
 
-# Access: http://localhost:8090
+# Access: http://localhost:8070
 ```
 
 ---
@@ -121,21 +123,21 @@ manfree-nextcloud-platforms/
 ### 1. Local Access
 ```bash
 # Direct access on host machine
-http://localhost:8090
+http://localhost:8070
 ```
 
 ### 2. LAN Access (Staff Network)
 ```bash
 # Access from any device on same network
-http://YOUR-SERVER-IP:8090
+http://YOUR-SERVER-IP:8070
 
-# Example: http://192.168.1.100:8090
+# Example: http://192.168.1.100:8070
 ```
 
 ### 3. Global Access (Internet)
 ```bash
 # Via Cloudflare tunnel (see global-access/)
-https://files.manfreetechnologies.com
+https://cloud.manfreetechnologies.com
 ```
 
 ---
@@ -236,7 +238,7 @@ backup/
 
 ### Setup Instructions
 1. Install app on device
-2. Enter server URL: `http://YOUR-IP:8090`
+2. Enter server URL: `http://YOUR-IP:8070`
 3. Login with your credentials
 4. Choose folders to sync
 5. Enable auto-upload (mobile)
@@ -329,7 +331,7 @@ docker-compose logs --tail=50
 docker stats --no-stream
 
 # Test network connectivity
-curl -I http://localhost:8090
+curl -I http://localhost:8070
 ```
 
 ### Common Issues
